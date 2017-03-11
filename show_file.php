@@ -1,7 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: miha
- * Date: 08.03.2017
- * Time: 21:48
- */
+
+
+
+echo $_GET['file'];
+
+$getText = file_get_contents('files/'.$_GET['file']);
+echo nl2br($getText);
+?>
