@@ -9,10 +9,16 @@
     <title>Edit File</title>
 </head>
 <body>
-<form action="edit_file.php" method="get">
+<form action="save_edit.php" method="get">
     <label><?=$nameFile;?></label></br></br>
-    <textarea cols='50' rows="20" name="sometext"></textarea></br>
-
+    <textarea cols='50' rows="20" name="sometext">
+    <?
+    			
+$getText = file_get_contents('files/' . $_GET['file']);
+echo nl2br($getText);
+    ?>
+    </textarea></br>
+					<input type='submit' name='отправить'>
 </form>
 </body>
 </html>
