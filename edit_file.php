@@ -1,5 +1,11 @@
 <?php
-    $nameFile = $_GET['file'];
+$nameFile = $_GET['file'];
+$mainP = $_SERVER['HTTP_HOST'];
+$text = $_POST['sometext'];
+
+$handle = fopen('files/' . $nameFile, 'w');
+fwrite($handle, $text . PHP_EOL);
+fclose($handle);
 ?>
 
 <!DOCTYPE html>
@@ -9,16 +15,18 @@
     <title>Edit File</title>
 </head>
 <body>
-<form action="save_edit.php" method="get">
-    <label><?=$nameFile;?></label></br></br>
+<h3><a href="http://<?=$mainP?>">Вернуться на главную</a></h3>
+<form action="" method="POST">
+    <label><?= $nameFile; ?></label></br></br>
     <textarea cols='50' rows="20" name="sometext">
-    <?
-    			
-$getText = file_get_contents('files/' . $_GET['file']);
-echo nl2br($getText);
-    ?>
+        <?
+        $getText = file('files/' . $_GET['file']);
+        foreach ($getText as $line) {
+            echo $line . '</br>';
+        }
+        ?>
     </textarea></br>
-					<input type='submit' name='отправить'>
+    <input type='submit' value="Сохранить">
 </form>
 </body>
 </html>

@@ -1,0 +1,9 @@
+a {
+    padding-right: 5px;
+    color: grey;
+    text-decoration: none;
+}
+
+a:hover {
+    color: cornflowerblue;
+}
