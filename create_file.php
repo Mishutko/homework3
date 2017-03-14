@@ -1,6 +1,13 @@
 <?php
 $mainP = $_SERVER['HTTP_HOST'];
 
+if (!empty($_POST['sometext']) && !empty($_POST['nameFile'])) {
+    $handle = fopen('files/' . $_POST['nameFile'].'.txt', 'w');
+    fwrite($handle, $_POST['sometext'] . PHP_EOL);
+    fclose($handle);
+    echo 'Файл сохранен';
+}
+
 ?>
 
 <!DOCTYPE html>
