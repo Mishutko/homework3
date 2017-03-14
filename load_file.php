@@ -1,7 +1,6 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: miha
- * Date: 08.03.2017
- * Time: 21:48
- */
+
+
+<form action=upload.php method=post enctype=multipart/form-data>
+    <input type=file name=uploadfile>
+    <input type=submit value=Загрузить>
+</form>

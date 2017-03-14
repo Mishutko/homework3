@@ -15,7 +15,8 @@ $dir = opendir('files/');
 </head>
 <body>
 <div>
-    <h3><a href='/create_file.php'>Создать файл</a> </h3>
+    <h3><a href='/create_file.php'>Создать файл</a></h3>
+    <h3><a href='/load_file.php'>Загрузить файл</a></h3>
 
     <?
     while ($fl = readdir($dir)) {
